@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+ <ul>
+   <li>Website</li>
+   <li><%=link_to "Blog", root_path%></li>
+   <li>About</li>
+ </ul>
+ <ul>
+ <h3>Follow Me!</h3>
+   <li><a href="#">Facebook</a></li>
+   <li><a href="#">GitHub</a></li>
+   <li><a href="#">Linkeden</a></li>
+ </ul>
+<button>Sign in!</button>
+  </div>
+  <button><%=link_to "New Post", new_post_path%></button>
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg)%>
+    <%end%>
+
+
+    <%= yield %>
+  </body>
+</html>
